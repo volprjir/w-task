@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="store">
+        <div class="store-name">{% module linkify(store.name) %}</div>
+        <div class="store-postcode">{% module linkify(store.postcode) %}</div>
+    </div>
+
+    <div class="store">
+        <div class="store-latitude">LATITUDE: {% module linkify(store.location.latitude) %}</div>
+        <div class="store-longitude">LONGITUDE: {% module linkify(store.location.longitude) %}</div>
+    </div>
+</div>

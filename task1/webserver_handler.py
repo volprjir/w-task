@@ -15,6 +15,7 @@ define("debug", default=True, help="run in debug mode")
 
 logger = logging.getLogger(__name__)
 
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         with open(config.OUT_PATH, "rb") as f:
@@ -24,9 +25,7 @@ class MainHandler(tornado.web.RequestHandler):
 def start_webserver():
     parse_command_line()
     app = tornado.web.Application(
-        [
-            (r"/", MainHandler)
-        ],
+        [(r"/", MainHandler)],
         template_path=os.path.join(os.path.dirname(__file__), "templates"),
         static_path=os.path.join(os.path.dirname(__file__), "static"),
         xsrf_cookies=True,

@@ -10,7 +10,7 @@ from task1 import config
 def parse_line(line: str) -> (str, str):
     # dirty hack how to get rid of "
     raw_key, raw_val = line.split(":")
-    return raw_key.strip()[1:-1], raw_val.strip()[:-1].replace("\"", "")
+    return raw_key.strip()[1:-1], raw_val.strip()[:-1].replace('"', "")
 
 
 def process_file_content(path: str) -> List[StoreItem]:

@@ -21,9 +21,11 @@ def make_app():
     return Application(urls)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logger.info(f"The server is listening on port {config.WEBSERVER_PORT}")
-    logger.info(f"Example call: http://localhost:{config.WEBSERVER_PORT}/filter?find=hav")
+    logger.info(
+        f"Example call: http://localhost:{config.WEBSERVER_PORT}/filter?find=hav"
+    )
     app = make_app()
     app.listen(config.WEBSERVER_PORT)
     IOLoop.instance().start()

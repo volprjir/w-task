@@ -1,10 +1,10 @@
 from typing import List
 
-from task1 import config
-from common.file_handler import process_file_content
 import requests
 
+from common.file_handler import process_file_content
 from common.models import StoreItem
+from task1 import config
 
 
 def find_close_postcodes(postcode: str, radius: int):

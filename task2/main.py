@@ -1,9 +1,10 @@
-from tornado.web import Application, RequestHandler
-from tornado.ioloop import IOLoop
-from task2.stores_handler import filter_store
 import logging
 
+from tornado.ioloop import IOLoop
+from tornado.web import Application, RequestHandler
+
 from task2 import config
+from task2.stores_handler import filter_store
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

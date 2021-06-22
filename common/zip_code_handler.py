@@ -1,9 +1,10 @@
+import logging
 from typing import Union
+
+import requests
 
 from common.models import GpsPosition
 from task1 import config
-import logging
-import requests
 
 logger = logging.getLogger(__name__)
 

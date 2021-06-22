@@ -8,6 +8,10 @@ from task2 import config
 
 def filter_store(substring: str) -> List[StoreItem]:
     data = process_file_content(config.DATA_PATH)
+    # if no substring, return all
+    if not substring:
+        return data
+
     # case insensitive
     filtered_postcode = list(filter(lambda x: substring in x.postcode.lower(), data))
     filtered_name = list(filter(lambda x: substring in x.name.lower(), data))

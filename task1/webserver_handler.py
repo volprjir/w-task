@@ -1,14 +1,14 @@
+import logging
+import os.path
 import pickle
 
 import tornado.escape
 import tornado.ioloop
 import tornado.locks
 import tornado.web
-import os.path
-import logging
+from tornado.options import define, options, parse_command_line
 
 from task1 import config
-from tornado.options import options, parse_command_line, define
 
 define("port", default=config.WEBSERVER_PORT, help="run on the given port", type=int)
 define("debug", default=True, help="run in debug mode")
@@ -27,7 +27,6 @@ def start_webserver():
         [
             (r"/", MainHandler)
         ],
-        cookie_secret="__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
         template_path=os.path.join(os.path.dirname(__file__), "templates"),
         static_path=os.path.join(os.path.dirname(__file__), "static"),
         xsrf_cookies=True,

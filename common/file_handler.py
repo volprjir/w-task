@@ -1,9 +1,10 @@
 import os
-from typing import List
 import pickle
-from task1 import config
+from typing import List
+
 from common.models import StoreItem
 from common.zip_code_handler import get_position_for_zip_code
+from task1 import config
 
 
 def parse_line(line: str) -> (str, str):

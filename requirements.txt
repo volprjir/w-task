@@ -1,3 +1,5 @@
 dataclasses
 requests
 tornado
+pytest
+pytest-mock

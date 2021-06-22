@@ -18,3 +18,10 @@ class StoreItem:
 
     def __lt__(self, other):
         return self.name < other.name
+
+    def __eq__(self, other):
+        return (
+            self.name == other.name
+            and self.postcode == other.postcode
+            and self.location == other.location
+        )

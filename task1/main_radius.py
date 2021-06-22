@@ -8,7 +8,6 @@ from task1 import config
 
 
 def find_close_postcodes(postcode: str, radius: int):
-
     raw_response = requests.get(
         f"{config.API_BASE_URL}/postcodes/{postcode}/nearest", params={"radius": radius}
     )
@@ -19,7 +18,8 @@ def find_close_postcodes(postcode: str, radius: int):
         return list(map(lambda x: x["postcode"], results))
 
 
-def get_close_stores(hash_table_stores: dict, postcode: str, radius: int):
+def get_close_stores(input_data: List[StoreItem], postcode: str, radius: int):
+    hash_table_stores = _generate_hash_table(input_data)
     close_postcodes = find_close_postcodes(postcode, radius)
     if close_postcodes:
         matched = [
@@ -69,9 +69,7 @@ def main():
                 "You have entered invalid radius. Try again or write q to end program"
             )
 
-    stores_close_by_postcode = get_close_stores(
-        _generate_hash_table(data), postcode, radius
-    )
+    stores_close_by_postcode = get_close_stores(data, postcode, radius)
     if stores_close_by_postcode:
         print(f"The closest stores to {postcode}:")
         for store in stores_close_by_postcode:

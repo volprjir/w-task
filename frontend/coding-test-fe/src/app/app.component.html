@@ -1,0 +1,30 @@
+<!--<label for="search">Enter the filter</label>-->
+<!--<input id="search" [(ngModel)]="toSearch" (ngModelChange)="onFieldChanged($event)"  [matAutocomplete]="auto" type="text">-->
+<!--<mat-autocomplete #auto="matAutocomplete">-->
+<!--  <mat-option *ngFor="let store of suggestion" [value]="store">-->
+<!--    {{store}}-->
+<!--  </mat-option>-->
+<!--</mat-autocomplete>-->
+
+
+<form class="example-form">
+  <input type="text"
+         [(ngModel)]="toSearch"
+         (ngModelChange)="onFieldChanged($event)"
+         placeholder="Search for a store"
+         [formControl]="control"
+         [matAutocomplete]="auto">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let store of filteredStores | async" [value]="store">
+      {{store}}
+    </mat-option>
+  </mat-autocomplete>
+</form>
+
+
+<hr>
+<ul>
+  <li *ngFor="let res of results">
+    <app-store [store]="res"></app-store>
+  </li>
+</ul>

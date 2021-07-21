@@ -1,6 +1,6 @@
 import pytest
-
 from common.models import StoreItem
+
 from task2.stores_handler import filter_store
 
 arr = [

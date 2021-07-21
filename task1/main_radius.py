@@ -1,9 +1,9 @@
 from typing import List
 
 import requests
-
 from common.file_handler import process_file_content
 from common.models import StoreItem
+
 from task1 import config
 
 

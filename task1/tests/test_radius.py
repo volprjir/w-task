@@ -2,9 +2,9 @@ import os
 import pickle
 
 import pytest
-
 from common.file_handler import process_file_content
 from common.models import GpsPosition, StoreItem
+
 from task1.main_radius import get_close_stores
 
 

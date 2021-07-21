@@ -1,6 +1,7 @@
 import logging
 import os.path
 import pickle
+import webbrowser
 
 import tornado.escape
 import tornado.ioloop
@@ -33,5 +34,5 @@ def start_webserver():
     )
     app.listen(options.port)
     logger.info(f"The server is listening on port {config.WEBSERVER_PORT}")
-    logger.info(f"Please open http://localhost:{config.WEBSERVER_PORT}")
+    webbrowser.open(f"http://localhost:{config.WEBSERVER_PORT}")
     tornado.ioloop.IOLoop.current().start()

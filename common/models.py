@@ -3,8 +3,8 @@ from dataclasses import dataclass
 
 @dataclass
 class GpsPosition:
-    longitude: str
-    latitude: str
+    longitude: float
+    latitude: float
 
 
 @dataclass

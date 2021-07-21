@@ -1,4 +1,3 @@
-from dataclasses import asdict
 from typing import List
 
 from common.file_handler import process_file_content

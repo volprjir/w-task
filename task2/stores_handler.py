@@ -16,4 +16,4 @@ def filter_store(substring: str) -> List[StoreItem]:
     filtered_postcode = list(filter(lambda x: substring in x.postcode.lower(), data))
     filtered_name = list(filter(lambda x: substring in x.name.lower(), data))
     final_result = filtered_postcode + filtered_name
-    return [asdict(store) for store in final_result]
+    return final_result

@@ -1,4 +1,5 @@
 import logging
+from dataclasses import asdict
 
 from tornado.ioloop import IOLoop
 from tornado.web import Application, RequestHandler
@@ -13,7 +14,7 @@ logger = logging.getLogger(__name__)
 class StoreHandler(RequestHandler):
     def get(self):
         find = self.get_argument("find", None, True)
-        self.write({"results": filter_store(find)})
+        self.write({"results": [asdict(store) for store in filter_store(find)]})
 
 
 def make_app():

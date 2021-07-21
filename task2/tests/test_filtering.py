@@ -22,18 +22,18 @@ def mocked_input():
     "filter, expected_result",
     [
         ("", arr),
-        ("hav", [{"name": "Newhaven", "postcode": "BN9 0AG", "location": None}]),
+        ("hav", [StoreItem("Newhaven", "BN9 0AG")]),
         (
             "br",
             [
-                {"name": "Orpington", "postcode": "BR5 3RP", "location": None},
-                {"name": "Bracknell", "postcode": "RG12 1EN", "location": None},
-                {"name": "Brentford", "postcode": "TW8 8JW", "location": None},
-                {"name": "Broadstairs", "postcode": "CT10 2RQ", "location": None},
-                {"name": "Tunbridge_Wells", "postcode": "TN2 3FB", "location": None},
+                StoreItem("Orpington", "BR5 3RP"),
+                StoreItem("Bracknell", "RG12 1EN"),
+                StoreItem("Brentford", "TW8 8JW"),
+                StoreItem("Broadstairs", "CT10 2RQ"),
+                StoreItem("Tunbridge_Wells", "TN2 3FB"),
             ],
         ),
-        ("rg", [{"name": "Bracknell", "postcode": "RG12 1EN", "location": None}]),
+        ("rg", [StoreItem("Bracknell", "RG12 1EN")]),
     ],
 )
 def test_filter(filter, expected_result, mocker, mocked_input):

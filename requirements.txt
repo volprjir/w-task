@@ -3,4 +3,3 @@ requests
 tornado
 pytest
 pytest-mock
-webbrowser

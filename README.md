@@ -1,6 +1,6 @@
-# Watcherr interview tasks
+# Interview tasks
 
-This project has been done as interview task for Watcherr company. Backend is written in Python and task 2 has also frontend written in Angular. I spent about 100 minutes to complete this.
+This project has been done as interview task. Backend is written in Python and task 2 has also frontend written in Angular. I spent about 100 minutes to complete this.
 
 
 ## Task 1
